@@ -18,10 +18,27 @@ namespace PRMS
         {
             InitializeComponent();
             user = dt;
-            string name = user.Rows[0]["FIO"].ToString();
-            sayHiLabel.Text = "Добро пожаловать " + name;
 
             openForm(new AllRecordsForm(user));
+
+            if (user.Rows.Count == 0)
+            {
+                panel6.Visible = false;
+                panel8.Visible = false;
+                panel15.Visible = false;
+                ExitButton.Visible = false;
+            } else
+            {
+                button1.Visible = false;
+                button2.Visible = false;
+                bool isAdmin = Convert.ToBoolean(user.Rows[0]["isAdmin"]);
+
+                if (isAdmin == true)
+                {
+                    panel13.Visible = true;
+                }
+            }
+
         }
 
         
@@ -109,7 +126,11 @@ namespace PRMS
 
         private void ExitButton_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            DataTable dt = new DataTable();
+
+            Form homeForm = new HomeForm(dt);
+            homeForm.Show();
+            this.Hide();
         }
 
         //LeftBar
@@ -122,10 +143,14 @@ namespace PRMS
             panel5.Visible = true;
             panel7.Visible = false; 
             panel9.Visible = false;
+            panel14.Visible = false;
+            panel16.Visible = false;
 
             guna2Button1.BackColor = activeColor;
             guna2Button2.BackColor = defaultColor;
             guna2Button3.BackColor = defaultColor;
+            guna2Button4.BackColor = defaultColor;
+            guna2Button5.BackColor = defaultColor;
 
 
             openForm(new AllRecordsForm(user));
@@ -136,10 +161,14 @@ namespace PRMS
             panel5.Visible = false;
             panel7.Visible = true;
             panel9.Visible = false;
+            panel14.Visible = false;
+            panel16.Visible = false;
 
             guna2Button1.BackColor = defaultColor;
             guna2Button2.BackColor = activeColor;
             guna2Button3.BackColor = defaultColor;
+            guna2Button4.BackColor = defaultColor;
+            guna2Button5.BackColor = defaultColor;
 
 
             openForm(new MyRecordsForm(user));
@@ -151,15 +180,64 @@ namespace PRMS
             panel5.Visible = false;
             panel7.Visible = false;
             panel9.Visible = true;
+            panel14.Visible = false;
+            panel16.Visible = false;
 
             guna2Button1.BackColor = defaultColor;
             guna2Button2.BackColor = defaultColor;
             guna2Button3.BackColor = activeColor;
+            guna2Button4.BackColor = defaultColor;
+            guna2Button5.BackColor = defaultColor;
 
             openForm(new AddRecordForm(user));
 
         }
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = false;
+            panel7.Visible = false;
+            panel9.Visible = false;
+            panel14.Visible = true;
+            panel16.Visible = false;
 
-        
+            guna2Button1.BackColor = defaultColor;
+            guna2Button2.BackColor = defaultColor;
+            guna2Button3.BackColor = defaultColor;
+            guna2Button4.BackColor = activeColor;
+            guna2Button5.BackColor = defaultColor;
+
+            openForm(new AdminForm(user));
+        }
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = false;
+            panel7.Visible = false;
+            panel9.Visible = false;
+            panel14.Visible = false;
+            panel16.Visible = true;
+
+            guna2Button1.BackColor = defaultColor;
+            guna2Button2.BackColor = defaultColor;
+            guna2Button3.BackColor = defaultColor;
+            guna2Button4.BackColor = defaultColor;
+            guna2Button5.BackColor = activeColor;
+
+            openForm(new LKForm(user));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form fomrLogin = new LoginForm();
+            fomrLogin.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form registerForm = new RegisterForm();
+            registerForm.Show();
+            this.Hide();
+        }
+
     }
 }

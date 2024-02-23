@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.ExitButton = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -46,6 +50,12 @@
             this.sayHiLabel = new System.Windows.Forms.Label();
             this.TopBar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel16 = new System.Windows.Forms.Panel();
             this.guna2ImageButton4 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -58,6 +68,8 @@
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.TopBar.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -73,6 +85,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.panel15);
+            this.panel1.Controls.Add(this.panel13);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.panel12);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.panel11);
             this.panel1.Controls.Add(this.panel10);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel6);
@@ -83,6 +101,58 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(232, 749);
             this.panel1.TabIndex = 15;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(166)))), ((int)(((byte)(196)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(87)))), ((int)(((byte)(116)))));
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(198)))), ((int)(((byte)(209)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(87)))), ((int)(((byte)(116)))));
+            this.button2.Location = new System.Drawing.Point(0, 539);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(232, 37);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Войти";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // panel12
+            // 
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel12.Location = new System.Drawing.Point(0, 576);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(232, 22);
+            this.panel12.TabIndex = 21;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(166)))), ((int)(((byte)(196)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(87)))), ((int)(((byte)(116)))));
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(198)))), ((int)(((byte)(209)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(87)))), ((int)(((byte)(116)))));
+            this.button1.Location = new System.Drawing.Point(0, 598);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(232, 37);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Регистрация";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel11.Location = new System.Drawing.Point(0, 635);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(232, 64);
+            this.panel11.TabIndex = 4;
             // 
             // panel10
             // 
@@ -282,6 +352,89 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "PRMS";
             // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.LightGray;
+            this.panel13.Controls.Add(this.guna2Button4);
+            this.panel13.Controls.Add(this.panel14);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(0, 299);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(232, 50);
+            this.panel13.TabIndex = 23;
+            this.panel13.Visible = false;
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Button4.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button4.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.guna2Button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(87)))), ((int)(((byte)(116)))));
+            this.guna2Button4.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(166)))), ((int)(((byte)(196)))));
+            this.guna2Button4.Location = new System.Drawing.Point(15, 0);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.Size = new System.Drawing.Size(217, 50);
+            this.guna2Button4.TabIndex = 2;
+            this.guna2Button4.Text = "Админ панель";
+            this.guna2Button4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(87)))), ((int)(((byte)(116)))));
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(87)))), ((int)(((byte)(116)))));
+            this.panel14.Location = new System.Drawing.Point(0, 0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(15, 50);
+            this.panel14.TabIndex = 0;
+            this.panel14.Visible = false;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.LightGray;
+            this.panel15.Controls.Add(this.guna2Button5);
+            this.panel15.Controls.Add(this.panel16);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(0, 349);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(232, 50);
+            this.panel15.TabIndex = 24;
+            // 
+            // guna2Button5
+            // 
+            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Button5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button5.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.guna2Button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(87)))), ((int)(((byte)(116)))));
+            this.guna2Button5.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(166)))), ((int)(((byte)(196)))));
+            this.guna2Button5.Location = new System.Drawing.Point(15, 0);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.Size = new System.Drawing.Size(217, 50);
+            this.guna2Button5.TabIndex = 2;
+            this.guna2Button5.Text = "Личный кабинет";
+            this.guna2Button5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(87)))), ((int)(((byte)(116)))));
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(87)))), ((int)(((byte)(116)))));
+            this.panel16.Location = new System.Drawing.Point(0, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(15, 50);
+            this.panel16.TabIndex = 0;
+            this.panel16.Visible = false;
+            // 
             // guna2ImageButton4
             // 
             this.guna2ImageButton4.CheckedState.ImageSize = new System.Drawing.Size(23, 27);
@@ -368,6 +521,8 @@
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.TopBar.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -394,5 +549,15 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel13;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel15;
+        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private System.Windows.Forms.Panel panel16;
     }
 }

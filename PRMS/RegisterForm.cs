@@ -12,7 +12,6 @@ namespace PRMS
 {
     public partial class RegisterForm : Form
     {
-        public Form ReturnForm;
         public RegisterForm()
         {
             InitializeComponent();
@@ -67,9 +66,9 @@ namespace PRMS
 
             if (dt.Rows.Count > 0)
             {
-                this.Hide();
                 HomeForm homeForm = new HomeForm(dt);
                 homeForm.Show();
+                this.Close();
             } else
             {
                 errorMessage.Visible = true;
@@ -117,8 +116,9 @@ namespace PRMS
 
         private void label6_Click(object sender, EventArgs e)
         {
-            ReturnForm.Show();
-            this.Close();
+            Form fomrLogin = new LoginForm();
+            fomrLogin.Show();
+            this.Hide();
            
         }
 
@@ -184,5 +184,12 @@ namespace PRMS
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable dataTable = new DataTable();
+            Form homeForm = new HomeForm(dataTable);
+            homeForm.Show();
+            this.Hide();
+        }
     }
 }

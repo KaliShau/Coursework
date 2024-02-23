@@ -58,9 +58,9 @@ namespace PRMS
 
             if (dt.Rows.Count > 0)
             {
-                this.Hide();
                 HomeForm homeForm = new HomeForm(dt);
                 homeForm.Show();
+                this.Close();
             } else
             {
                 errorMessage.Visible = true;
@@ -96,8 +96,9 @@ namespace PRMS
 
         private void label5_Click(object sender, EventArgs e)
         {
+            Form registerForm = new RegisterForm();
+            registerForm.Show();
             this.Hide();
-            new RegisterForm() { ReturnForm = this }.Show();
 
         }
 
@@ -161,6 +162,14 @@ namespace PRMS
                 Point dif = Point.Subtract(Cursor.Position, new Size(dragCursotPoint));
                 this.Location = Point.Add(dragFromPoint, new Size(dif));
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataTable dataTable = new DataTable();
+            Form homeForm = new HomeForm(dataTable);
+            homeForm.Show();
+            this.Hide();
         }
     }
 }

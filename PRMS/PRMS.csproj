@@ -107,6 +107,12 @@
     <Compile Include="AddRecordForm.Designer.cs">
       <DependentUpon>AddRecordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllRecordsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     </Compile>
     <Compile Include="HomeForm.Designer.cs">
       <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LKForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LKForm.Designer.cs">
+      <DependentUpon>LKForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -143,11 +155,17 @@
     <EmbeddedResource Include="AddRecordForm.resx">
       <DependentUpon>AddRecordForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AllRecordsForm.resx">
       <DependentUpon>AllRecordsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LKForm.resx">
+      <DependentUpon>LKForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

@@ -151,5 +151,30 @@ namespace PRMS
             vCmd.ExecuteReader();
             
         }
+
+        public void updataUser(int id, string fio, string email, string password)
+        {
+            DataTable dt = new DataTable();
+            connection();
+            vCmd = new NpgsqlCommand();
+            vCmd.Connection = vCon;
+            vCmd.CommandText = "UPDATE \"User\" SET \"FIO\" = :fio, password = :pass, email = :email WHERE id = :id";
+            vCmd.Parameters.AddWithValue("id", id);
+            vCmd.Parameters.AddWithValue("fio", fio);
+            vCmd.Parameters.AddWithValue("pass", password);
+            vCmd.Parameters.AddWithValue("email", email);
+            vCmd.ExecuteReader();
+        }
+
+        public void deleteUser(int id)
+        {
+            DataTable dt = new DataTable();
+            connection();
+            vCmd = new NpgsqlCommand();
+            vCmd.Connection = vCon;
+            vCmd.CommandText = "DELETE FROM \"User\" WHERE id = :id";
+            vCmd.Parameters.AddWithValue("id", id);
+            vCmd.ExecuteReader();
+        }
     }
 }

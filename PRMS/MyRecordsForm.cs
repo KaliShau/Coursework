@@ -29,17 +29,26 @@ namespace PRMS
         private void guna2DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             panel1.Visible = true;
-            panel2.Visible = true;
-            label5.Visible = false;
+            button2.Visible = true;
+            label7.Visible = false;
 
             if (e.RowIndex == -1) return;
 
             DataGridViewRow row = guna2DataGridView1.Rows[e.RowIndex];
+            try
+            {
             patientId = Convert.ToInt32(row.Cells[0].Value);
             guna2TextBox1.Text = row.Cells[2].Value.ToString();
             guna2TextBox2.Text = row.Cells[3].Value.ToString();
             guna2TextBox3.Text = row.Cells[4].Value.ToString();
             guna2TextBox4.Text = row.Cells[5].Value.ToString();
+
+            } catch
+            {
+                panel1.Visible = false;
+                button2.Visible = false;
+                label7.Visible = true;
+            }
         }
 
          private void button2_Click(object sender, EventArgs e)
@@ -101,8 +110,10 @@ namespace PRMS
             guna2DataGridView1.DataSource = dt;
 
             panel1.Visible = false;
-            panel2.Visible = false;
-            label5.Visible = true;
+            button2.Visible = false;
+            label7.Visible = true;
         }
+
+        
     }
 }
