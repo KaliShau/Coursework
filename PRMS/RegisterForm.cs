@@ -6,15 +6,38 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace PRMS
 {
     public partial class RegisterForm : Form
     {
+
+        DataTable departament;
+
         public RegisterForm()
         {
             InitializeComponent();
+
+            DB db = new DB();
+            DataTable dt = new DataTable();
+
+            List<string> departmentList = new List<string>();
+
+            dt = db.getData("SELECT * FROM \"Department\"");
+            departament = dt;
+
+            foreach(DataRow row in dt.Rows)
+{
+                departmentList.Add(row["name"].ToString());
+            }
+
+            foreach (string department in departmentList)
+            {
+                guna2ComboBox1.Items.Add(department);
+            }
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
@@ -23,6 +46,8 @@ namespace PRMS
             string login = LoginField.Text;
             string pass = PasswordField.Text;
             string name = NameField.Text;
+
+            
 
             if (LoginField.Text == "")
             {
@@ -54,15 +79,29 @@ namespace PRMS
 
             }
 
-            if (login == "" || pass == "" || name == "")
+            if (guna2ComboBox1.Text == "")
+            {
+                panel4.BackColor = Color.FromArgb(255, 155, 155);
+            }
+            else
+            {
+                panel4.BackColor = Color.White;
+
+            }
+
+            if (login == "" || pass == "" || name == "" || guna2ComboBox1.Text == "")
             {
                 return;
             }
 
+            string nameToFind = guna2ComboBox1.Text;
+            DataRow[] foundRows = departament.Select("name = '" + nameToFind + "'");
+            int departamentId = Convert.ToInt32(foundRows[0]["id"]);
+
             DB db = new DB();
             DataTable dt = new DataTable();
 
-            dt = db.register(login, pass, name);
+            dt = db.register(login, pass, name, departamentId);
 
             if (dt.Rows.Count > 0)
             {
@@ -190,6 +229,19 @@ namespace PRMS
             Form homeForm = new HomeForm(dataTable);
             homeForm.Show();
             this.Hide();
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (guna2ComboBox1.Text == "")
+            {
+                panel4.BackColor = Color.FromArgb(255, 155, 155);
+            }
+            else
+            {
+                panel4.BackColor = Color.White;
+
+            }
         }
     }
 }

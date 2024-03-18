@@ -14,10 +14,12 @@ namespace PRMS
     public partial class AddRecordForm : Form
     {
         int userId;
+        int departamentId;
         public AddRecordForm(DataTable user)
         {
             InitializeComponent();
             this.userId = Convert.ToInt16(user.Rows[0]["id"]);
+            this.departamentId = Convert.ToInt16(user.Rows[0]["departmentId"]);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -54,7 +56,7 @@ namespace PRMS
             }
 
             DB db = new DB();
-            db.createPatient(userId, fio, record, address, content);
+            db.createPatient(userId, fio, record, address, content, departamentId);
 
             
 

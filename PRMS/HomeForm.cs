@@ -13,7 +13,9 @@ namespace PRMS
     public partial class HomeForm : Form
     {
 
-        DataTable user;
+        public DataTable user;
+
+
         public HomeForm(DataTable dt)
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace PRMS
                 panel6.Visible = false;
                 panel8.Visible = false;
                 panel15.Visible = false;
+                panel17.Visible = false;
                 ExitButton.Visible = false;
             } else
             {
@@ -33,15 +36,21 @@ namespace PRMS
                 button2.Visible = false;
                 bool isAdmin = Convert.ToBoolean(user.Rows[0]["isAdmin"]);
 
+                DB db = new DB();
+                DataTable departament = new DataTable();
+
+                departament = db.getCurrentDepartament(Convert.ToInt16(dt.Rows[0]["departmentId"]));
+
+                sayHiLabel.Text = "Отделение: " + departament.Rows[0]["name"];
+
                 if (isAdmin == true)
                 {
                     panel13.Visible = true;
+                    panel19.Visible = true;
                 }
             }
-
         }
 
-        
         private Form activeForm = null;
 
         private void openForm(Form childForm)
@@ -145,12 +154,16 @@ namespace PRMS
             panel9.Visible = false;
             panel14.Visible = false;
             panel16.Visible = false;
+            panel18.Visible = false;
+            panel20.Visible = false;
 
             guna2Button1.BackColor = activeColor;
             guna2Button2.BackColor = defaultColor;
             guna2Button3.BackColor = defaultColor;
             guna2Button4.BackColor = defaultColor;
             guna2Button5.BackColor = defaultColor;
+            guna2Button6.BackColor = defaultColor;
+            guna2Button7.BackColor = defaultColor;
 
 
             openForm(new AllRecordsForm(user));
@@ -163,12 +176,16 @@ namespace PRMS
             panel9.Visible = false;
             panel14.Visible = false;
             panel16.Visible = false;
+            panel18.Visible = false;
+            panel20.Visible = false;
 
             guna2Button1.BackColor = defaultColor;
             guna2Button2.BackColor = activeColor;
             guna2Button3.BackColor = defaultColor;
             guna2Button4.BackColor = defaultColor;
             guna2Button5.BackColor = defaultColor;
+            guna2Button6.BackColor = defaultColor;
+            guna2Button7.BackColor = defaultColor;
 
 
             openForm(new MyRecordsForm(user));
@@ -182,12 +199,16 @@ namespace PRMS
             panel9.Visible = true;
             panel14.Visible = false;
             panel16.Visible = false;
+            panel18.Visible = false;
+            panel20.Visible = false;
 
             guna2Button1.BackColor = defaultColor;
             guna2Button2.BackColor = defaultColor;
             guna2Button3.BackColor = activeColor;
             guna2Button4.BackColor = defaultColor;
             guna2Button5.BackColor = defaultColor;
+            guna2Button6.BackColor = defaultColor;
+            guna2Button7.BackColor = defaultColor;
 
             openForm(new AddRecordForm(user));
 
@@ -199,12 +220,16 @@ namespace PRMS
             panel9.Visible = false;
             panel14.Visible = true;
             panel16.Visible = false;
+            panel18.Visible = false;
+            panel20.Visible = false;
 
             guna2Button1.BackColor = defaultColor;
             guna2Button2.BackColor = defaultColor;
             guna2Button3.BackColor = defaultColor;
             guna2Button4.BackColor = activeColor;
             guna2Button5.BackColor = defaultColor;
+            guna2Button6.BackColor = defaultColor;
+            guna2Button7.BackColor = defaultColor;
 
             openForm(new AdminForm(user));
         }
@@ -215,14 +240,58 @@ namespace PRMS
             panel9.Visible = false;
             panel14.Visible = false;
             panel16.Visible = true;
+            panel18.Visible = false;
+            panel20.Visible = false;
 
             guna2Button1.BackColor = defaultColor;
             guna2Button2.BackColor = defaultColor;
             guna2Button3.BackColor = defaultColor;
             guna2Button4.BackColor = defaultColor;
             guna2Button5.BackColor = activeColor;
+            guna2Button6.BackColor = defaultColor;
+            guna2Button7.BackColor = defaultColor;
 
             openForm(new LKForm(user));
+        }
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = false;
+            panel7.Visible = false;
+            panel9.Visible = false;
+            panel14.Visible = false;
+            panel16.Visible = false;
+            panel18.Visible = true;
+            panel20.Visible = false;
+
+            guna2Button1.BackColor = defaultColor;
+            guna2Button2.BackColor = defaultColor;
+            guna2Button3.BackColor = defaultColor;
+            guna2Button4.BackColor = defaultColor;
+            guna2Button5.BackColor = defaultColor;
+            guna2Button6.BackColor = activeColor;
+            guna2Button7.BackColor = defaultColor;
+
+            openForm(new MyDepartamentRecordForm(user));
+        }
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+            panel5.Visible = false;
+            panel7.Visible = false;
+            panel9.Visible = false;
+            panel14.Visible = false;
+            panel16.Visible = false;
+            panel18.Visible = false;
+            panel20.Visible = true;
+
+            guna2Button1.BackColor = defaultColor;
+            guna2Button2.BackColor = defaultColor;
+            guna2Button3.BackColor = defaultColor;
+            guna2Button4.BackColor = defaultColor;
+            guna2Button5.BackColor = defaultColor;
+            guna2Button6.BackColor = defaultColor;
+            guna2Button7.BackColor = activeColor;
+
+            openForm(new DepartamentForm(user));
         }
 
         private void button2_Click(object sender, EventArgs e)

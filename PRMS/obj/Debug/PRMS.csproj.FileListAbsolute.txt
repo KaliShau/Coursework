@@ -98,3 +98,5 @@ C:\Users\fa624\Projects\C#\PRMS\obj\Debug\PRMS.exe
 C:\Users\fa624\Projects\C#\PRMS\obj\Debug\PRMS.pdb
 C:\Users\fa624\Projects\C#\PRMS\obj\Debug\PRMS.AdminForm.resources
 C:\Users\fa624\Projects\C#\PRMS\obj\Debug\PRMS.LKForm.resources
+C:\Users\fa624\Projects\C#\PRMS\obj\Debug\PRMS.MyDepartamentRecordForm.resources
+C:\Users\fa624\Projects\C#\PRMS\obj\Debug\PRMS.DepartamentForm.resources

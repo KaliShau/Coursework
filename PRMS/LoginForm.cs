@@ -18,8 +18,7 @@ namespace PRMS
             InitializeComponent();
         }
 
-        NpgsqlConnection vCon;
-        NpgsqlCommand vCmd;
+
 
 
         private void LoginButton_Click(object sender, EventArgs e)

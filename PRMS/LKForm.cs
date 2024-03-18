@@ -19,9 +19,9 @@ namespace PRMS
             InitializeComponent();
             user = dt;
 
-            guna2TextBox1.Text = dt.Rows[0]["FIO"].ToString();
-            guna2TextBox2.Text = dt.Rows[0]["email"].ToString();
-            guna2TextBox3.Text = dt.Rows[0]["password"].ToString();
+            guna2TextBox1.Text = user.Rows[0]["FIO"].ToString();
+            guna2TextBox2.Text = user.Rows[0]["email"].ToString();
+            guna2TextBox3.Text = user.Rows[0]["password"].ToString();
             int userId = Convert.ToInt32(dt.Rows[0]["id"]);
 
             DB db = new DB();
@@ -70,6 +70,7 @@ namespace PRMS
             guna2TextBox1.Text = updateUser.Rows[0]["FIO"].ToString();
             guna2TextBox2.Text = updateUser.Rows[0]["email"].ToString();
             guna2TextBox3.Text = updateUser.Rows[0]["password"].ToString();
+
         }
     }
 }

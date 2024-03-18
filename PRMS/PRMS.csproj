@@ -101,6 +101,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DepartamentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepartamentForm.Designer.cs">
+      <DependentUpon>DepartamentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddRecordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyDepartamentRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyDepartamentRecordForm.Designer.cs">
+      <DependentUpon>MyDepartamentRecordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyRecordsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +164,9 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DepartamentForm.resx">
+      <DependentUpon>DepartamentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddRecordForm.resx">
       <DependentUpon>AddRecordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyDepartamentRecordForm.resx">
+      <DependentUpon>MyDepartamentRecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyRecordsForm.resx">
       <DependentUpon>MyRecordsForm.cs</DependentUpon>
